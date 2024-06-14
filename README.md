@@ -1,6 +1,8 @@
-Boas vindas ao meu perfil 💙💙
+Boas vindas ao meu perfil 🐡🐠
+
 Meu nome é Carlos Eduardo
 
+![]()
 
 Sou professor de técnologia e robotica no ensino médio utilizando a plataforma Alura
 Estou me desenvolvendo na linguagem JavaScript
