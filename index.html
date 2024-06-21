@@ -1,103 +1,16 @@
-// fazer raquete do opoente 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.3/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.3/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
 
-let bolinhaX = 300
-let bolinhaY = 200
-let diametro = 22
-let raio = diametro/2
-
-// Variaveis da velocidade da bolinha
-let velocidadeBolinhaX = 3
-let velocidadeBolinhaY = 3
-
-//Variaveis da minha raquete
-let xRaquete = 5
-let yRaquete = 150
-let raqueteComprimento = 10
-let raqueteAltura = 90
-
-let colidiu = false
-
-//variáveis do oponente
-let xRaqueteOponente = 585;
-let yRaqueteOponente = 150;
-let velocidadeYOponente;
-
-
-
-function setup() {
-  createCanvas(600, 400);
-}
-
-function draw() {
-  background("green");
-  movimentaBolinha()
-  mostreBolinha()
-  colisaoBorda()
-  mostraRaquete(xRaquete, yRaquete)
-  movimentaMinhaRaquete(xRaquete, yRaquete)
-  verificaColisaoRaquete()
-  colisaoMinhaRaqueteBiblioteca()
-  mostraRaquete(xRaqueteOponente, yRaqueteOponente)
-  movimentaRaqueteOponente()
-}
-  
-function mostreBolinha(){ 
-  circle(bolinhaX, bolinhaY, raio)
-  fill ("orange")
-}
-
-
- function movimentaBolinha(){
-  bolinhaX += velocidadeBolinhaX
-  bolinhaY += velocidadeBolinhaY
- }
-
-function colisaoBorda(){
-  if (bolinhaX + raio > width || bolinhaX - raio < 0) {
-        velocidadeBolinhaX *= -1;
-    }
-    if (bolinhaY + raio > height || bolinhaY - raio < 0) {
-        velocidadeBolinhaY *= -1;
-    }
-  
-}
-
-  function mostraRaquete(x, y){
-    rect(x, y, raqueteComprimento, raqueteAltura)
-    fill (color (204, 0, 0))
-  }
-
-  function movimentaMinhaRaquete() {
-  if(keyIsDown(UP_ARROW)) {
-    yRaquete -= 10;
-  }
-  if(keyIsDown(DOWN_ARROW)) {
-    yRaquete += 10;
-  }
-}
-
-function verificaColisaoRaquete() {
-    if (bolinhaX - raio < xRaquete + raqueteComprimento
-        && bolinhaY - raio < yRaquete + raqueteAltura
-        && bolinhaY + raio > yRaquete) {
-        velocidadeBolinhaX *= -1;
-    }
-}
-
-function colisaoMinhaRaqueteBiblioteca(){
-  colidiu = collideRectCircle (xRaquete, yRaquete, raqueteComprimento, raqueteAltura, bolinhaX, bolinhaY, raio)
-  if (colidiu) {
-        velocidadeBolinhaX *= -1;
-    }
-  
-  function mostraRaquete(x, y) {
-     fill("white")
- rect(x, y, raqueteComprimento, raqueteAltura);
-}
-
-  function movimentaRaqueteOponente() {
-    velocidadeYOponente = yBolinha - yRaqueteOponente - raqueteComprimento / 2 - 30;
-    yRaqueteOponente += velocidadeYOponente
-}
-
-}
+  </head>
+  <body>
+    <main>
+    </main>
+    <script src="sketch.js"></script>
+    <script src="p5.collide2d.js"></script>
+  </body>
+</html>
